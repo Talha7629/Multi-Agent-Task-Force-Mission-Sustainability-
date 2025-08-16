@@ -138,18 +138,34 @@ page_bg_color = """
         border: 1px solid #444 !important;
         border-radius: 8px !important;
     }
-    .stButton > button {
-        border-radius: 10px; font-weight: 700;
-        background: linear-gradient(90deg,#43a047,#2e7d32);
-        color: #fff; border: none; padding: .6em 1.2em;
-    }
-    .stButton > button:hover {
-        background: linear-gradient(90deg,#2e7d32,#1b5e20);
-        transition: .3s;
-    }
 </style>
 """
 st.markdown(page_bg_color, unsafe_allow_html=True)
+
+# --- Unique Launch Button Styling ---
+custom_button = """
+<style>
+.stButton > button {
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 18px;
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    color: #ffffff;
+    border: 2px solid #4caf50;
+    padding: 0.7em 1.5em;
+    box-shadow: 0 0 12px #2e7d32, 0 0 24px #1b5e20;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.stButton > button:hover {
+    background: linear-gradient(135deg, #43a047, #2e7d32);
+    box-shadow: 0 0 20px #43a047, 0 0 40px #2e7d32;
+    transform: scale(1.05);
+}
+</style>
+"""
+st.markdown(custom_button, unsafe_allow_html=True)
 
 # --- Title ---
 st.markdown(
@@ -159,6 +175,35 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown("---")
+
+# --- Sidebar Logo / Title ---
+st.sidebar.markdown(
+    """
+    <style>
+        .mstf-logo {
+            font-size: 28px;
+            font-weight: 800;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 10px #9c27b0, 0 0 20px #7b1fa2;
+            animation: pulse 2s infinite alternate;
+        }
+        .mstf-tagline {
+            text-align: center;
+            font-size: 14px;
+            color: #bbb;
+            margin-top: -5px;
+        }
+        @keyframes pulse {
+            from { text-shadow: 0 0 8px #9c27b0, 0 0 16px #7b1fa2; }
+            to { text-shadow: 0 0 18px #ba68c8, 0 0 30px #9c27b0; }
+        }
+    </style>
+    <div class="mstf-logo">⚡ MSTF ⚡</div>
+    <div class="mstf-tagline">Multi-Agent Task Force</div>
+    """,
+    unsafe_allow_html=True
+)
 
 # --- Sidebar ---
 st.sidebar.header("🛠️ Mission Control")
